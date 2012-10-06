@@ -1,0 +1,15 @@
+- title "Tracks"
+
+%table
+  %tr
+    %th Title
+    %th Lyrics
+  - for track in @tracks
+    %tr
+      %td= track.title
+      %td= track.lyrics
+      %td= link_to 'Show', track
+      %td= link_to 'Edit', edit_track_path(track)
+      %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Track", new_track_path

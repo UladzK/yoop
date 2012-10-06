@@ -1,0 +1,15 @@
+- title "Track"
+
+%p
+  %strong Title:
+  = @track.title
+%p
+  %strong Lyrics:
+  = @track.lyrics
+
+%p
+  = link_to "Edit", edit_track_path(@track)
+  |
+  = link_to "Destroy", @track, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", tracks_path
