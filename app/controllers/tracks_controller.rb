@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
   def index
     @tracks = Track.all
   end
@@ -36,6 +37,6 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    redirect_to tracks_url, :notice => "Successfully destroyed track."
+    redirect_to tracks_url, :notice => "Successfully deleted track."
   end
 end

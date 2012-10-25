@@ -1,15 +1,14 @@
-- title "Tracks"
-
+.login
+  = link_to 'Login', login_path
+- title "Welcome to yoop, dear friend"
 %table
   %tr
-    %th Title
-    %th Lyrics
+    %th Artist:
   - for track in @tracks
     %tr
-      %td= track.title
-      %td= track.lyrics
-      %td= link_to 'Show', track
-      %td= link_to 'Edit', edit_track_path(track)
-      %td= link_to 'Destroy', track, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to track.title, track
+      - if current_user then
+        %td= link_to 'Edit', edit_track_path(track)
+        %td= link_to 'Delete', track, :confirm => 'Are you sure?', :method => :delete
 
 %p= link_to "New Track", new_track_path

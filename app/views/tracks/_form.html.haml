@@ -1,12 +1,12 @@
-= form_for @track do |f|
+= form_for( @track ) do |f| 
   = f.error_messages
   %p
-    = f.label :title
+    = f.label( "title" )
     %br
-    = f.text_field :title
+    = f.text_field( :title )
   %p
-    = f.label :lyrics
+    = f.label( :lyrics )
     %br
-    = f.text_area :lyrics
+    = f.text_area( :lyrics )
   %p
-    = f.submit
+    = f.submit()

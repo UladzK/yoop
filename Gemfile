@@ -10,6 +10,7 @@ gem 'nifty-generators'
 gem 'mysql2'
 gem 'gon'
 gem 'haml'
+
 #gem "rmagick"
 #gem "carrierwave"
 
@@ -44,3 +45,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "mocha", :group => :test
+gem "bcrypt-ruby", :require => "bcrypt"
