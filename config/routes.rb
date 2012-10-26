@@ -11,8 +11,9 @@ Yoop::Application.routes.draw do
 
   resources :users
 
-  root :to => 'tracks#index'
-  resources :tracks
+
+  root :to => 'artists#index'
+  resources :artists, :tracks
 
 
   # The priority is based upon order of creation:

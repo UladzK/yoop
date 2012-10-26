@@ -1,12 +1,18 @@
+.login
+  - if current_user then
+    = link_to 'Logout', logout_path
+  - else
+    = link_to 'Login', login_path
+
 - title @track.title
 
 %p
   %strong Lyrics:
   = simple_format(@track.lyrics)
-
-%p
-  = link_to "Edit", edit_track_path(@track)
-  |
-  = link_to "Delete", @track, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "Back to the artist", tracks_path
+- if current_user then
+  %p
+    = link_to "Edit", edit_track_path(@track)
+    |
+    = link_to "Delete", @track, :confirm => 'Are you sure?', :method => :delete
+    |
+= link_to "Back to the artist's songs", tracks_path

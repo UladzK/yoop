@@ -1,0 +1,21 @@
+.login
+  - if current_user then
+    = link_to 'Logout', logout_path
+  - else
+    = link_to 'Login', login_path
+- title "Welcome to yoop, dear friend"
+%h1 Here you can find correct lyrics for your favourite songs, enjoy!
+%table
+  %tr
+    %th Artists:
+    %th Genre:
+  - for artist in @artists
+    %tr
+      %td= link_to artist.name, tracks_path
+      %th= artist.genre
+      - if current_user then
+        %td= link_to 'Edit', edit_artist_path(artist)
+        %td= link_to 'Delete', artist, :confirm => 'Are you sure?', :method => :delete
+
+- if current_user then
+  %p= link_to "New artist", new_artist_path

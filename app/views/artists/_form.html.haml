@@ -1,0 +1,12 @@
+= form_for( @artist ) do |f|
+  = f.error_messages
+  %p
+    = f.label( "name" )
+    %br
+    = f.text_field( :name )
+  %p
+    = f.label( "genre" )
+    %br
+    = f.text_field( :genre )
+  %p
+    = f.submit()

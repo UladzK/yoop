@@ -1,5 +1,8 @@
 class TracksController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
+  def artist_track(artist)
+
+  end
   def index
     @tracks = Track.all
   end
