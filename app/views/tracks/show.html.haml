@@ -14,5 +14,6 @@
     = link_to "Edit", edit_track_path(@track)
     |
     = link_to "Delete", @track, :confirm => 'Are you sure?', :method => :delete
-    |
-= link_to "Back to the artist's songs", tracks_path
+
+
+= link_to "Back to the artist's songs", artist_path($key)

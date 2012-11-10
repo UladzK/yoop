@@ -1,4 +1,6 @@
 Yoop::Application.routes.draw do
+  root :to => 'artists#index'
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
@@ -11,9 +13,9 @@ Yoop::Application.routes.draw do
 
   resources :users
 
+  resources :tracks
+  resources :artists
 
-  root :to => 'artists#index'
-  resources :artists, :tracks
 
 
   # The priority is based upon order of creation:

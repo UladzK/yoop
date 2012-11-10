@@ -1,6 +1,20 @@
+.login
+  - if current_user then
+    = link_to 'Logout', logout_path
+  - else
+    = link_to 'Login', login_path
 - title @artist.name
+- $key = @artist.id
 
+%table
+  %tr
+    %th Tracks:
+  - for track in @artist.tracks
+    %tr
+      %td= link_to track.title, track_path(track)
+      - if current_user then
+        %td= link_to 'Edit', edit_track_path(track)
+        %td= link_to 'Delete', track, :confirm => 'Are you sure?', :method => :delete
 
-%p
-  = link_to "Back to the artists", artists_path
-
+%p= link_to "New track", new_track_path
+%p= link_to "Back to the artists", artists_path

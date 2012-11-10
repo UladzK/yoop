@@ -1,10 +1,10 @@
 class TracksController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
-  def artist_track(artist)
 
-  end
   def index
-    @tracks = Track.all
+    for artist in Track.all
+      artist.tracks
+    end
   end
 
   def show
@@ -31,7 +31,7 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
     if @track.update_attributes(params[:track])
-      redirect_to @track, :notice  => "Successfully updated track."
+      redirect_to artist_path($key), :notice  => "Successfully updated track."
     else
       render :action => 'edit'
     end
@@ -40,6 +40,6 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    redirect_to tracks_url, :notice => "Successfully deleted track."
+    redirect_to artist_path, :notice => "Successfully deleted track."
   end
 end
