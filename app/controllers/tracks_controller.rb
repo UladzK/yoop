@@ -40,6 +40,6 @@ class TracksController < ApplicationController
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    redirect_to artist_path, :notice => "Successfully deleted track."
+    redirect_to artist_path($key.id), :notice => "Successfully deleted track."
   end
 end

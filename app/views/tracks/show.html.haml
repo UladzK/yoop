@@ -11,9 +11,19 @@
   = simple_format(@track.lyrics)
 - if current_user then
   %p
+
     = link_to "Edit", edit_track_path(@track)
     |
     = link_to "Delete", @track, :confirm => 'Are you sure?', :method => :delete
 
+%strong Also you can see this track among:
+- for artist in @track.artists
+  - if artist.id != $key.id then
+    = link_to "#{artist.name}", artist_path(artist)
+%br
 
-= link_to "Back to the artist's songs", artist_path($key)
+-#%p
+-#  %strong Another authors of this track:
+-#  = @track.authors
+
+= link_to "Back to the #{$key.name} songs", artist_path($key.id)
