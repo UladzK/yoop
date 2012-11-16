@@ -9,3 +9,12 @@ h1{
     display: inline-block;
     margin-top: 50px;
 }
+iframe{
+    clear: both;
+    float: left;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+p{
+    clear: both;
+}

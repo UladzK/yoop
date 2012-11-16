@@ -6,6 +6,19 @@
 
 - title @track.title
 
+- if @track.url != nil then
+  %iframe{:AllowScriptAccess => "always", :allowFullScreen => "true", :frameborder => "27",
+          :height => "230", :src => "#{youtube_id(@track.url)}",
+          :title => "YouTube video player", :width => "340"}
+
+-#%object{:height => "0", :width => "0"}
+-#  %param{:name => "movie", :value => "http://www.youtube.com/v#{$youtube_id[1]}"}
+-#  %param{:name => "AllowFullScreen", :value => "true"}
+-#  %param{:name => "AllowScriptAccess", :value => "always"}
+-#  %embed{:AllowFullScreen => "true", :AllowScriptAccess => "always",
+-#         :height => "290", :src => "http://www.youtube.com/v#{$youtube_id[1]}",
+-#         :type => "application/x-ShockWave-flash", :width => "440"}
+
 %p
   %strong Lyrics:
   = simple_format(@track.lyrics)
