@@ -54,7 +54,8 @@ module Yoop
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

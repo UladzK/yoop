@@ -1,5 +1,6 @@
 = form_for( @artist ) do |f|
   = f.error_messages
+  / = f.hidden_field :get,
   %p
     = f.label( "name" )
     %br
@@ -9,4 +10,4 @@
     %br
     = f.text_field( :genre )
   %p
-    = f.submit()
+    = f.submit

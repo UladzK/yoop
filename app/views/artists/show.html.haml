@@ -1,12 +1,11 @@
-.login
-  - if current_user then
-    = link_to 'Logout', logout_path
-  - else
-    = link_to 'Login', login_path
 - title @artist.name
 
 - $key = @artist
-
+/ .search
+/   = form_tag track_path, :method => :get do
+/     %p
+/       = text_field_tag :search, params[:search]
+/       = submit_tag 'Search', :name => nil
 %table
   %tr
     %th Tracks:

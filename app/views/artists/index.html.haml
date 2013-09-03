@@ -1,14 +1,9 @@
-.login
-  - if current_user then
-    = link_to 'Logout', logout_path
-  - else
-    = link_to 'Login', login_path
 - title "Welcome to yoop, dear friend"
 %h1 Here you can find correct lyrics for your favourite songs, enjoy!
 %table
   %tr
-    %th Artists:
-    %th Genre:
+    %th= sortable "name", "Artist"
+    %th= sortable "genre", "Genre"
   - for artist in @artists
     %tr
       %td= link_to artist.name, artist_path(artist)

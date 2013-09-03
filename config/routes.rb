@@ -1,6 +1,9 @@
 Yoop::Application.routes.draw do
   root :to => 'artists#index'
 
+  resources :tracks
+  resources :artists
+  
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
@@ -8,13 +11,11 @@ Yoop::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
 
   match 'login' => 'sessions#new', :as => :login
-  
+
   resources :sessions
 
   resources :users
 
-  resources :tracks
-  resources :artists
 
 
 
