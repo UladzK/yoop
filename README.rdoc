@@ -1,5 +1,5 @@
 ==Yoop
-This is a test type of project which main idea is creation of big musical database.
+This is test type of project which main idea is creation of big musical database.
 Musical database includes: artists and info about them, tracks and lyrics to them.
 ==Nowadays
 Realised mechanism of creating tracks and artists (with many-to-many association where one track can has many artists and one artist can has many tracks)
