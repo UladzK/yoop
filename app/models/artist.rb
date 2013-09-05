@@ -7,11 +7,10 @@ class Artist < ActiveRecord::Base
   #validates_presence_of :genre, :on => :create, :message => "cannot be blank"
   validates :genre, :format => { :with => /\A[a-zA-Z]+\z/,
                             :message => "only letters allowed" }
-
-	def self.search(search)
-		if search
+  def self.search(search)
+    if search
       find(:all, :conditions => ['name LIKE?', "%#{search}%"])
-	  else
+    else
       find(:all)
     end
   end
