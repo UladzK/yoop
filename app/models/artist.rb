@@ -13,6 +13,6 @@ class Artist < ActiveRecord::Base
     		find(:all, :conditions => ['name LIKE?', "%#{search}%"])
 	    else
   		  find(:all)
-      end
     end
+  end
 end
