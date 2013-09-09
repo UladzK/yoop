@@ -8,7 +8,6 @@ Realised login/signup mechanism
 Realised sorting of artists on main page
 ==TODO
 Realise searching by tracks
-Realise login through google/facebook/gmail
 Realise sorting of tracks on artist page
 Realise rating of tracks (think about it)
 Songs added list (to each user)
