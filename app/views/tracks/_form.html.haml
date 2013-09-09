@@ -18,9 +18,10 @@
     = f.text_area( :lyrics )
   .field
     = hidden_field_tag "track[artist_ids][]", nil
-    - Artist.all.each do |artist|
+    - Artist.all.each do |artist|      
       = check_box_tag "track[artist_ids][]", artist.id, @track.artist_ids.include?(artist.id), id: dom_id(artist)
-      = label_tag dom_id(artist), artist.name
+      .names
+        = label_tag dom_id(artist), artist.name
       %br
   %p
     = f.submit()

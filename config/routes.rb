@@ -12,12 +12,12 @@ Yoop::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
+  match '/auth/facebook/callback' => 'sessions#fb_create'
+
+  match '/auth/google/callback' => 'sessions#google_create'
   resources :sessions
 
   resources :users
-
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

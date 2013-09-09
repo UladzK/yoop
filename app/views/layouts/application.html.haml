@@ -12,7 +12,6 @@
   %body
     =render 'layouts/header'
     #container
-      / - if flash.respond_to? "flashes" then
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}" 
       - if show_title?

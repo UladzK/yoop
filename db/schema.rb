@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829174117) do
+ActiveRecord::Schema.define(:version => 20130909195843) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(:version => 20130829174117) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "isadmin"
+    t.text     "uid",           :limit => 16777215
+    t.string   "provider"
   end
 
 end
