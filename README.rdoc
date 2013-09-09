@@ -11,4 +11,4 @@ Realise searching by tracks
 Realise login through google/facebook/gmail
 Realise sorting of tracks on artist page
 Realise rating of tracks (think about it)
-Song added list (to each user)
+Songs added list (to each user)
