@@ -38,13 +38,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     erubis (2.7.0)
     execjs (2.0.1)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    gon (4.1.1)
-      actionpack (>= 2.3.0)
-      json
     haml (4.0.3)
       tilt
     hashie (2.0.5)
@@ -70,7 +72,6 @@ GEM
     multi_json (1.7.9)
     multipart-post (1.2.0)
     mysql2 (0.3.13)
-    nifty-generators (0.4.6)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -88,6 +89,7 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -141,6 +143,8 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -148,12 +152,11 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
-  gon
+  devise (= 2.1.2)
   haml
   jquery-rails
   mocha
   mysql2
-  nifty-generators
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

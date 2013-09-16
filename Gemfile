@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'nifty-generators'
 gem 'mysql2'
-gem 'gon'
+gem 'devise', '2.1.2'
 gem 'haml'
 gem 'jquery-rails'
 gem "bcrypt-ruby", :require => "bcrypt"

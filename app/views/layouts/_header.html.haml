@@ -8,10 +8,8 @@
         = text_field_tag :search, params[:search], "id" => "search_size"        
         = submit_tag 'Search', :name => nil, "id" => "search_btn_size"        
     .login
-      - if current_user then 
-        = "Welcome, #{current_user.username}, #{current_user.uid}, #{current_user.provider}"
-        = link_to 'Logout', logout_path
+      - if signed_in? then 
+        = "Welcome"
+        = link_to 'Sign Out', destroy_user_session_path, :method => :delete
       - else
-        = link_to 'Login/Sign Up', login_path
-        = link_to "Sign in with facebook", "/auth/facebook"
-        = link_to "Sign in with google", "/auth/google"
+        = link_to 'Sign In/Sign Up', new_user_session_path
